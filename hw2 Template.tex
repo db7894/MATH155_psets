@@ -1,0 +1,104 @@
+\documentclass[11pt]{article}
+\usepackage{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{lastpage}
+\usepackage{parskip}
+\usepackage{siunitx}
+\usepackage{listings} % to include code
+
+\newif\ifclearpage
+
+\newcommand{\name}{}
+\newcommand{\class}{Math 155, Fall 2018}
+\newcommand{\assignment}{Problem Set 2}
+\newcommand{\duedate}{Due Thursday, September 20}
+
+\clearpagetrue
+
+\newcommand{\problem}[1]{\section*{#1}}
+\newcommand{\solution}{\hrulefill}
+\newcommand{\maybeclearpage}{\ifclearpage\clearpage\fi}
+
+\renewcommand{\vec}[1]{\mathbf{#1}}
+
+\geometry{margin=1in}
+
+\fancypagestyle{primary}{
+  \fancyhf{}
+  \lhead{\name}
+  \chead{\assignment}
+  \rhead{\class}
+  \lfoot{\duedate}
+  \rfoot{\thepage{} of \pageref{LastPage}}}
+
+\pagestyle{primary}
+
+\setlist[enumerate]{label=(\alph*)}
+
+\sisetup{per-mode=symbol}
+
+\begin{document}
+
+\problem{Chapter 2, Problem 4}
+Let $\{e_t\}$ be a zero-mean white noise process. Suppose that the observed process is $Y_t = e_t + \theta e_{t-1}$, where $\theta$ is either $3$ or $1/3$.
+\begin{enumerate}
+	\item Find the autocorrelation function $\{Y_t\}$ both when $\theta = 3$ and when $\theta = 1/3$.
+	\item You should have discovered that the time series is stationary regardless of the value of $\theta$ and that the autocorrelation functions are the same for $\theta=3$ and $\theta=1/3$.  For simplicity, suppose that the process mean is known to be zero and the variance of $Y_t$ is known to be 1. You observe the series $\{Y_t\}$ for $t = 1,2,...,n$ and suppose that you can produce good estimates of the autocorrelations $\rho_k$. Do you think that you could determine which value of $\theta$ is correct (3 or 1/3) based on the estimate of $\rho_k$? Why or why not?
+\end{enumerate}
+
+\solution
+
+
+\maybeclearpage
+\problem{Chapter 2, Problem 6}
+Let $\{X_t\}$ be a stationary time series, and define $Y_t = \begin{cases} 
+      X_t & \text{for } t \text{ odd}. \\
+      X_t + 3 & \text{for } t \text{ even}.
+   \end{cases}$
+\begin{enumerate}
+	\item Show that $Cov(Y_t,Y_{t-k})$ is free of $t$ for all lags $k$.
+	\item Is $\{Y_t\}$ stationary?
+\end{enumerate}
+
+\solution
+
+
+
+\maybeclearpage
+\problem{Chapter 2, Problem 11}
+Suppose $Cov(X_t,X_{t-k}) = \gamma_k$ is free of $t$ but that $E(X_t) = 3t$.
+\begin{enumerate}
+	\item Is $\{X_t\}$ stationary?
+	\item Let  $Y_t = 7 - 3t + X_t$. Is $\{Y_t\}$ stationary?
+\end{enumerate} 
+
+\solution
+
+
+\maybeclearpage
+\problem{Chapter 2, Problem 21}
+For a random walk with random starting value, let $Y_t = Y_0 + e_t + e_{t-1} + \cdots + e_1$ for $t>0$ where $Y_0$ has a distribution with mean $\mu_0$ and variance $\sigma_0^2$. Suppose further that $Y_0,e_1,...,e_t$ are independent.
+\begin{enumerate}
+	\item Show that $E(Y_t) = \mu_0$ for all $t$.
+	\item Show that $Var(Y_t) = t\sigma_e^2 + \sigma_0^2$.
+	\item Show that $Cov(Y_t,Y_s) = \min(t,s)\sigma_e^2 + \sigma_0^2$.
+	\item Show that $Corr(Y_t,Y_s) = \sqrt{\dfrac{t\sigma_a^2 + \sigma_0^2}{s\sigma_a^2 + \sigma_0^2}}$ for $0 \leq t \leq s$.
+\end{enumerate}
+
+\solution
+
+
+\maybeclearpage
+\problem{Chapter 2, Problem 23}
+Two processes $\{Z_t\}$ and $\{Y_t\}$ are said to be \textbf{independent} if for any time points $t_1,t_2,...,t_m$ and $s_1,s_2,...,s_n$ the random variables $\{Z_{t_1},Z_{t_2},...,Z_{t_m}\}$ are independent of the random variables $\{Y_{s_1},Y_{s_2},...,Y_{s_n}\}$. Show that if $\{Z_t\}$ and $\{Y_t\}$ are independent stationary processes, then $W_t=Z_t+Y_t$ is stationary.
+
+\solution
+
+\maybeclearpage
+
+
+\end{document}
