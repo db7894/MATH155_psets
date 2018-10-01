@@ -1,0 +1,117 @@
+\documentclass[11pt]{article}
+\usepackage{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{lastpage}
+\usepackage{parskip}
+\usepackage{siunitx}
+\usepackage{listings} % to include code
+
+\newif\ifclearpage
+
+\newcommand{\name}{}
+\newcommand{\class}{Math 155, Fall 2018}
+\newcommand{\assignment}{Problem Set 4}
+\newcommand{\duedate}{Due Thursday, October 4}
+\newcommand{\rpm}{\sbox0{$1$}\sbox2{$\scriptstyle\pm$}
+  \raise\dimexpr(\ht0-\ht2)/2\relax\box2 }
+
+\clearpagetrue
+
+\newcommand{\problem}[1]{\section*{#1}}
+\newcommand{\solution}{\hrulefill}
+\newcommand{\maybeclearpage}{\ifclearpage\clearpage\fi}
+
+\renewcommand{\vec}[1]{\mathbf{#1}}
+
+\geometry{margin=1in}
+
+\fancypagestyle{primary}{
+  \fancyhf{}
+  \lhead{\name}
+  \chead{\assignment}
+  \rhead{\class}
+  \lfoot{\duedate}
+  \rfoot{\thepage{} of \pageref{LastPage}}}
+
+\pagestyle{primary}
+
+\setlist[enumerate]{label=(\alph*)}
+
+\sisetup{per-mode=symbol}
+
+\begin{document}
+
+\problem{Chapter 3, Problem 11}
+(Continuation of  Exercise 3.5) Return to the \textsc{wages} series.
+\begin{enumerate}
+	\item Consider the residuals from a least squares fit of a quadratic time trend.
+	\item Perform a runs test on the standardized residuals and interpret the results.
+	\item Calculate and interpret the sample autocorrelations for the standardized residuals.
+	\item Investigate the normality of the standardized residuals (error terms). Consider histograms and normal probability plots. Interpret the plots. 
+\end{enumerate}
+
+\solution
+
+
+\maybeclearpage
+\problem{Chapter 3, Problem 13}
+(Continuation of Exercise 3.7) Return to the \textsc{winnebago} time series.
+\begin{enumerate}
+	\item Calculate the least squares residuals from a seasonal-means plus linear time trend model on the logarithms of the sales time series.
+	\item Perform a runs test on the standardized residuals and interpret the results.
+	\item Calculate and interpret the sample autocorrelations for the standardized residuals.
+	\item Investigate the normality of the standardized residuals (error terms). Consider histograms and normal probability plots. Interpret the plots. 
+\end{enumerate}
+
+\solution
+
+
+
+\maybeclearpage
+\problem{Chapter 3, Problem 16}
+Suppose that a stationary time series $\{Y_t\}$, has an autocorrelation function of the form $\rho_k = \phi^k$ for $k > 0$, where $\phi$ is a constant in the range(-1,+1). 
+\begin{enumerate}
+	\item Show that $Var(\bar{y}) = \frac{\gamma_0}{n} \left[ \frac{1+\phi}{1-\phi} - \frac{(1-\phi^n}{(1-\phi)^2} \right] $ . (Hint: Use Equation (3.2.3) on page 28, the finit geometric sum $$\sum_{k=0}^n \phi^k = \frac{1-\phi^{1}}{1-\phi}, \text{, and the related sum } \sum_{k=0}^n k\phi^{k-1} = \frac{d}{d\phi} \left[ \sum_{k=0}^n \phi^k \right].$$
+	\item If $n$ is large, argue that $Var(\bar{Y}) \approx \frac{\gamma_0}{n} \left[ \frac{1+\phi}{1-\phi} \right]$. 
+	\item Plot $(1+\phi)/(1-\phi)$ for $\phi$ over the range -1 to +1. Interpret the plot in terms of the precision in estimating the process mean.
+\end{enumerate}
+\solution
+
+
+\maybeclearpage
+\problem{Chapter 4, Problem 1}
+Use first principles to find the autocorrelation function for the stationary process defined by $$ Y_t = 5 + e_t - \frac{1}{2}e_{t-1} + \frac{1}{4}e_{t-2} $$
+
+\solution
+
+
+\maybeclearpage
+\problem{Chapter 4, Problem 2}
+Sketch the autocorrelation functions for the following MA(2) models with parameters as specified:
+\begin{enumerate}
+	\item $\theta_1 = 0.5$ and $\theta_2 = 0.4$.
+	\item $\theta_1 = 1.2$ and $\theta_2 = -0.7$.
+	\item $\theta_1 = -1$ and $\theta_2 = -0.6$.
+\end{enumerate}
+
+\solution
+
+\maybeclearpage
+\problem{Chapter 4, Problem 5}
+Calculate and sketch the autocorrelation functions for each of the following AR(1) models. Plot for sufficient lags that the autocorrelation function has nearly died out.
+\begin{enumerate}
+	\item $\phi_1 = 0.6$.
+	\item $\phi_1 = -0.6$.
+	\item $\phi_1 = 0.95$. (Do out to 20 lags.)
+	\item $\phi_1 = 0.3$.
+\end{enumerate}
+
+\solution
+
+\maybeclearpage
+
+\end{document}
