@@ -1,0 +1,99 @@
+\documentclass[11pt]{article}
+\usepackage{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{lastpage}
+\usepackage{parskip}
+\usepackage{siunitx}
+\usepackage{listings} % to include code
+
+\newif\ifclearpage
+
+\newcommand{\name}{}
+\newcommand{\class}{Math 155, Fall 2018}
+\newcommand{\assignment}{Problem Set 5}
+\newcommand{\duedate}{Due Tuesday, October 16}
+\newcommand{\rpm}{\sbox0{$1$}\sbox2{$\scriptstyle\pm$}
+  \raise\dimexpr(\ht0-\ht2)/2\relax\box2 }
+
+\clearpagetrue
+
+\newcommand{\problem}[1]{\section*{#1}}
+\newcommand{\solution}{\hrulefill}
+\newcommand{\maybeclearpage}{\ifclearpage\clearpage\fi}
+
+\renewcommand{\vec}[1]{\mathbf{#1}}
+
+\geometry{margin=1in}
+
+\fancypagestyle{primary}{
+  \fancyhf{}
+  \lhead{\name}
+  \chead{\assignment}
+  \rhead{\class}
+  \lfoot{\duedate}
+  \rfoot{\thepage{} of \pageref{LastPage}}}
+
+\pagestyle{primary}
+
+\setlist[enumerate]{label=(\alph*)}
+
+\sisetup{per-mode=symbol}
+
+\begin{document}
+
+\problem{Chapter 4, Problem 6}
+Suppose that $\{Y_t\}$ is an AR(1) process with $-1 < \phi < +1$.
+\begin{enumerate}
+	\item Find the autocovariance function for $W_t = \nabla Y_t = Y_t - Y_{t-1}$ in terms of $\phi$ and $sigma_e^2$.
+	\item In particular, show that $Var(W_T) = 2\sigma_e^2/(1+\phi)$.
+\end{enumerate}
+
+\solution
+
+
+\maybeclearpage
+\problem{Chapter 4, Problem 7}
+Describe the important characteristics of the autocorrelation function for the following models: (a) MA(1), (b) MA(2), (c) AR(1), (d) AR(2), and (e) ARMA(1,1).
+
+\solution
+
+
+
+\maybeclearpage
+\problem{Chapter 4, Problem 9}
+Use the recursive formula of Equation (4.3.13) to calculate and then sketch the autocorrelation functions for the following AR(2) models with parameters as specified. In each case, specify whether the roots of the characteristic equation are real or complex. If the roots are complex, find the damping factor, $R$, and frequency, $\Theta$, for the corresponding autocorrelation function when expressed as in Equation (4.3.17), on page 73.
+\begin{enumerate}
+	\item $\phi_1 = 0.6$ and $\phi_2 = 0.3$.
+	\item $\phi_1 = -0.4$ and $\phi_2 = 0.5$.
+	\item $\phi_1 = 1.2$ and $\phi_2 = -0.7$.
+	\item $\phi_1 = -1$ and $\phi_2 = -0.6$.
+	\item $\phi_1 = 0.5$ and $\phi_2 = -0.9$.
+	\item $\phi_1 = -0.5$ and $\phi_2 = -0.6$.
+\end{enumerate}
+\solution
+
+
+\maybeclearpage
+\problem{Chapter 4, Problem 13}
+Let $\{Y_t\}$ be a stationary process with $\rho_k = 0$ for $k > 1$. Show that we must have $\mid \rho_1 \mid \leq \frac{1}{2}$. (Hint: Consider $Var(Y_{n+1} + Y_n + \cdots + Y_1)$ and then $Var(Y_{n+1} - Y_n + Y_{n-1} - \cdots \rpm Y_1)$. Use the fact that both of these must be nonnegative for \textit{all} $n$.)
+
+\solution
+
+
+\maybeclearpage
+\problem{Chapter 4, Problem 23}
+Suppose that $\{Y_t\}$ is an AR(1) process with $\rho_1 = \phi$. Define the sequence $\{b_t\}$ as $b_1 = Y_t - \phi Y_{t+1}$.
+\begin{enumerate}
+\item Show that $Cov(b_1,b_{t-k}) = 0$ for all $t$ and $k$.
+\item Show that $Cov(b_t,Y_{t+k}) = 0$ for all $t$ and $k>0$.
+\end{enumerate}
+
+\solution
+
+\maybeclearpage
+
+\end{document}
