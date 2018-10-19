@@ -53,7 +53,7 @@ Suppose that $\{Y_t\}$ is a zero mean, stationary process with $\mid \rho_1 \mid
 
 \maybeclearpage
 \problem{Chapter 4, Problem 16}
-Consider the "nonstationary" AR(1) model $Y_t = 3Y_{t-1} + e_t$.
+Consider the ``nonstationary'' AR(1) model $Y_t = 3Y_{t-1} + e_t$.
 \begin{enumerate}
 	\item Show that $Y_t = - \sum_{j=1}^{\infty} \left( \frac{1}{3} \right)^j e_{t+j}$ satisfies the AR(1) equation.
 	\item Show that the process defined in part (a) is stationary.
@@ -63,18 +63,17 @@ Consider the "nonstationary" AR(1) model $Y_t = 3Y_{t-1} + e_t$.
 \solution
 
 
-
 \maybeclearpage
 \problem{Chapter 4, Problem 19}
 Consider an MA(6) model with $\theta_1 = 0.5$, $\theta_2 = -0.25$, $\theta_3 = 0.125$, $\theta_4 = -0.0625$, $\theta_5 = 0.003125$, and $\theta_6 = -0.015625$. Find a much simpler model that has nearly the same $\Phi$-weights.
-\solution
 
+\solution
 
 \maybeclearpage
 \problem{Chapter 5, Problem 1}
 Identify the following as specific ARIMA models. That is, what are $p$, $d$, and $q$ and what are the values of the parameters (the $\phi$'s and $\theta$'s)?
 \begin{enumerate}
-	\item $Y_t = Y_{t-1} - 0.25Y_{t-2} - 0.1e_{t-1}$.
+	\item $Y_t = Y_{t-1} - 0.25Y_{t-2} + e_t - 0.1e_{t-1}$.
 	\item $Y_t = 2Y_{t-1} - Y_{t-2} + e_t$.
 	\item $Y_t = 0.5Y_{t-1} - 0.5Y_{t-2} + e_t - 0.5e_{t-1} + 0.25e_{t-2}$.
 \end{enumerate}
@@ -93,6 +92,7 @@ For each of the ARIMA models below, give the values for $E(\nabla Y_t)$ and $Var
 
 \solution
 
+
 \maybeclearpage
 \problem{Chapter 5, Problem 11}
 The data file \textsc{winnebago} contains monthly unit sales of recreational vehicle (RVs) from Winnebago, Inc., from November 1966 through February 1972. 
@@ -103,6 +103,8 @@ The data file \textsc{winnebago} contains monthly unit sales of recreational veh
 \end{enumerate}
 
 \solution
+
+
 
 \maybeclearpage
 \problem{Chapter 5, Problem 15}
