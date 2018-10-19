@@ -1,0 +1,121 @@
+\documentclass[11pt]{article}
+\usepackage{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{lastpage}
+\usepackage{parskip}
+\usepackage{siunitx}
+\usepackage{listings} % to include code
+
+\newif\ifclearpage
+
+\newcommand{\name}{}
+\newcommand{\class}{Math 155, Fall 2018}
+\newcommand{\assignment}{Problem Set 6}
+\newcommand{\duedate}{Due Thursday, October 25}
+\newcommand{\rpm}{\sbox0{$1$}\sbox2{$\scriptstyle\pm$}
+  \raise\dimexpr(\ht0-\ht2)/2\relax\box2 }
+
+\clearpagetrue
+
+\newcommand{\problem}[1]{\section*{#1}}
+\newcommand{\solution}{\hrulefill}
+\newcommand{\maybeclearpage}{\ifclearpage\clearpage\fi}
+
+\renewcommand{\vec}[1]{\mathbf{#1}}
+
+\geometry{margin=1in}
+
+\fancypagestyle{primary}{
+  \fancyhf{}
+  \lhead{\name}
+  \chead{\assignment}
+  \rhead{\class}
+  \lfoot{\duedate}
+  \rfoot{\thepage{} of \pageref{LastPage}}}
+
+\pagestyle{primary}
+
+\setlist[enumerate]{label=(\alph*)}
+
+\sisetup{per-mode=symbol}
+
+\begin{document}
+
+\problem{Chapter 4, Problem 14}
+Suppose that $\{Y_t\}$ is a zero mean, stationary process with $\mid \rho_1 \mid < 0.5$ and $\rho_k = 0$ for $k > 1$. Show that $\{Y_t\}$ must be representable as an MA(1) process. That is, show that there is a white noise sequence $\{e_t\}$ such that $Y_t = e_t - \theta e_{t-1}$, where $\rho_1$ is correct and $e_t$ is uncorrelated with $Y_{t-k}$ for $k > 0$. (Hint: Choose $\theta$ such that $\mid \theta \mid < 1$ and $\rho_1 = -\theta/(1+\theta^2)$; then let $e_t = \sum_{j=0}^{\infty} \theta^jY_{t-j}$. If we assume that $\{Y_t\}$ is a normal process, $e_t$ will also be normal, and zero correlation is equivalent to independence.)
+
+\solution
+
+
+\maybeclearpage
+\problem{Chapter 4, Problem 16}
+Consider the "nonstationary" AR(1) model $Y_t = 3Y_{t-1} + e_t$.
+\begin{enumerate}
+	\item Show that $Y_t = - \sum_{j=1}^{\infty} \left( \frac{1}{3} \right)^j e_{t+j}$ satisfies the AR(1) equation.
+	\item Show that the process defined in part (a) is stationary.
+	\item In what way is this solution unsatisfactory?
+\end{enumerate}
+
+\solution
+
+
+
+\maybeclearpage
+\problem{Chapter 4, Problem 19}
+Consider an MA(6) model with $\theta_1 = 0.5$, $\theta_2 = -0.25$, $\theta_3 = 0.125$, $\theta_4 = -0.0625$, $\theta_5 = 0.003125$, and $\theta_6 = -0.015625$. Find a much simpler model that has nearly the same $\Phi$-weights.
+\solution
+
+
+\maybeclearpage
+\problem{Chapter 5, Problem 1}
+Identify the following as specific ARIMA models. That is, what are $p$, $d$, and $q$ and what are the values of the parameters (the $\phi$'s and $\theta$'s)?
+\begin{enumerate}
+	\item $Y_t = Y_{t-1} - 0.25Y_{t-2} - 0.1e_{t-1}$.
+	\item $Y_t = 2Y_{t-1} - Y_{t-2} + e_t$.
+	\item $Y_t = 0.5Y_{t-1} - 0.5Y_{t-2} + e_t - 0.5e_{t-1} + 0.25e_{t-2}$.
+\end{enumerate}
+
+\solution
+
+
+\maybeclearpage
+\problem{Chapter 5, Problem 2}
+For each of the ARIMA models below, give the values for $E(\nabla Y_t)$ and $Var(\nabla Y_t)$.
+\begin{enumerate}
+	\item $Y_t = 4 + Y_{t-1} + e_t - 0.75e_{t-1}$.
+	\item $Y_t = 10 + 1.25Y_{t-1} - 0.25Y_{t-2} + e_t - 0.1e_{t-1}$.
+	\item $Y_t = 5 + 2Y_{t-1} - 1.7Y_{t-2} + 0.7Y_{t-3} + e_t - 0.5e_{t-1} + 0.25e_{t-2}$.
+\end{enumerate}
+
+\solution
+
+\maybeclearpage
+\problem{Chapter 5, Problem 11}
+The data file \textsc{winnebago} contains monthly unit sales of recreational vehicle (RVs) from Winnebago, Inc., from November 1966 through February 1972. 
+\begin{enumerate}
+\item Display and interpret the time series plot for these data.
+\item Now take natural logarithms of the monthly sales figures and display the time series plot of the transformed values. Describe the effect of the logarithms on the behavior of the series.
+\item Calculate the fractional relative changes, $(Y_t - Y_{t-1})/Y_{t-1}$, and compare them with the differences of (natural) logarithms, $\nabla \log(Y_t) = \log(Y_t) - \log(Y_{t-1})$. How do they compare for smaller values and for larger values?
+\end{enumerate}
+
+\solution
+
+\maybeclearpage
+\problem{Chapter 5, Problem 15}
+Quarterly earnings per share for the Johnson \& Johnson Company are given in the data file named \textsc{JJ}. The data cover the years from 1960 through 1980.
+\begin{enumerate}
+\item Display a time series plot of the data. Interpret the interesting features in the plot.
+\item Use software to produce a plot similar to exhibit 5.11, on page 102, and determine the "best" value of $\lambda$ for a power transformation of the data.
+\item Display a time series plot of the transformed values. Does this plot suggest that a stationary model might be appropriate?
+\item Display a time series plot of the differences of the transformed values. Does this plot suggest that a stationary model might be appropriate for the differences?
+\end{enumerate}
+
+\solution
+
+\maybeclearpage
+
+\end{document}
