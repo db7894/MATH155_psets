@@ -1,0 +1,117 @@
+\documentclass[11pt]{article}
+\usepackage{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{lastpage}
+\usepackage{parskip}
+\usepackage{siunitx}
+\usepackage{listings} % to include code
+
+\newif\ifclearpage
+
+\newcommand{\name}{}
+\newcommand{\class}{Math 155, Fall 2018}
+\newcommand{\assignment}{Problem Set 8}
+\newcommand{\duedate}{Due Thursday, November 22}
+\newcommand{\rpm}{\sbox0{$1$}\sbox2{$\scriptstyle\pm$}
+  \raise\dimexpr(\ht0-\ht2)/2\relax\box2 }
+
+\clearpagetrue
+
+\newcommand{\problem}[1]{\section*{#1}}
+\newcommand{\solution}{\hrulefill}
+\newcommand{\maybeclearpage}{\ifclearpage\clearpage\fi}
+
+\renewcommand{\vec}[1]{\mathbf{#1}}
+
+\geometry{margin=1in}
+
+\fancypagestyle{primary}{
+  \fancyhf{}
+  \lhead{\name}
+  \chead{\assignment}
+  \rhead{\class}
+  \lfoot{\duedate}
+  \rfoot{\thepage{} of \pageref{LastPage}}}
+
+\pagestyle{primary}
+
+\setlist[enumerate]{label=(\alph*)}
+
+\sisetup{per-mode=symbol}
+
+\begin{document}
+
+\problem{Chapter 6, Problem 25}
+Simulate AR(1) time series of length $n=36$ with $\phi = 0.7$.
+\begin{enumerate}
+\item Calculate and plot the theoretical autocorrelation function for this model. Plot sufficient lags until the correlations are negligible.
+\item Calculate and plot the sample ACF for your simulated series. How well do the values and patterns match the theoretical ACF from part (a)?
+\item What are the theoretical partial autocorrelation for this model?
+\item Calculate and plot the sample ACF for your simulated series. How well do the values and patterns match the theoretical ACF from part (a)? Use the large-sample standard errors reported in Exhibit 6.1 on page 111 to quantify your answer.
+\item Calculate and plot the sample PACF for your simulated series. How well do the values and patterns match the theoretical PACF from part (c)? Use the large-sample standard errors reported on page 115 to quantify your answer.
+\end{enumerate}
+
+\solution
+
+
+\maybeclearpage
+\problem{Chapter 6, Problem 27}
+Simulate an AR(2) time series of length $n=72$ with $\phi_1 = 0.7$ and $\phi_2 = -0.4$.
+\begin{enumerate}
+\item Calculate and plot the theoretical autocorrelation function for this model. Plot sufficient lags until the correlations are negligible.
+\item Calculate and plot the sample ACF for your simulated series. How well do the values and patterns match the theoretical ACF from part (a)?
+\item What are the theoretical partial autocorrelations for this model?
+\item Calculate and plot the sample ACF for your simulated series. How well do the values and patterns match the theoretical ACF from part (a)?
+\item Calculate and plot the sample PACF for your simulated series. How well do the values and patterns match the theoretical PACF from part (c)?
+\end{enumerate}
+
+\solution
+
+
+\maybeclearpage
+\problem{Chapter 6, Problem 36}
+The data file named \textsc{robot} contains a time series obtained from an industrial robot. The robot was put through a sequence of maneuvers, and the distance from a desired ending point was recorded in inches. This was repeated 324 times to form the time series.
+\begin{enumerate}
+\item Display the time series plot of the data. Based on this information, do these data appear to come from a stationary or nonstationary process?
+\item Calculate and plot the sample ACF and PACF for these data. Based on this additional information, do these data appear to come from a stationary or nonstationary process?
+\item Calculate and interpret the sample EACF.
+\item Use the best subsets ARMA approach to specify a model for these data. Compare these results with what you discovered in parts (a), (b), and (c).
+\end{enumerate}
+
+\solution
+
+\maybeclearpage
+\problem{Chapter 6, Problem 38}
+Calculate and interpret the sample EACF for the color property time series. The data are in the \textsc{color} file. Does the sample EACF suggest the same model that was specified by looking at the sample PACF?
+
+\solution
+
+
+\maybeclearpage
+\problem{Chapter 10, Problem 2}
+An AR model has AR characteristic polynomial $$(1 - 1.6x + 0.7x^2)(1 - 0.8x^{12})$$
+\begin{enumerate}
+	\item Is the model stationary?
+	\item Identify the model as a certain seasonal ARIMA model.
+\end{enumerate}
+
+\solution
+
+
+\maybeclearpage
+\problem{Chapter 10, Problem 5}
+Identify the following as certain multiplicative seasonal ARIMA models:
+\begin{enumerate}
+	\item $Y_t = 0.5Y_{t-1} + Y_{t-4} - 0.5Y_{t-5} + e_t - 0.3e_{t-1}$.
+	\item $Y_t = Y_{t-1} + Y_{t-12} - Y_{t-13} + e_t - 0.5e_{t-1} - 0.5e_{t-12} + 0.25e_{t-13}$.
+\end{enumerate}
+
+\solution
+
+\maybeclearpage
+
+\end{document}
